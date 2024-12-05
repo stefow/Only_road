@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e840371c60cb8f47aeba8696851cb1f, type: 3}
+  m_Name: BiomesStructure
+  m_EditorClassIdentifier: 
+  list:
+  - BiomeName: WOODS 1
+    Floor: {fileID: 1156367693171101932, guid: 256dd0cb0cfce4244a1f39f9d54436cd, type: 3}
+    sliders:
+    - sliderObject: {fileID: 1612676429563618606, guid: 01a567935a259be4e9e332ddbb44bd3b,
+        type: 3}
+      width: 1
+    - sliderObject: {fileID: 1612676429563618606, guid: 87e47d26ed8bb664395a1f8d8e5111de,
+        type: 3}
+      width: 1
+    - sliderObject: {fileID: 1612676429563618606, guid: a6b0bbf0747eda2408a85ce0df6688d9,
+        type: 3}
+      width: 1
+    - sliderObject: {fileID: 1612676429563618606, guid: 20721fbca9030f241b4c50d570b8d9f8,
+        type: 3}
+      width: 1
+    - sliderObject: {fileID: 1612676429563618606, guid: a41aa50c1e23964498f9232660086581,
+        type: 3}
+      width: 1
+    - sliderObject: {fileID: 1612676429563618606, guid: c5411e4b6232ea84aa1039243979c688,
+        type: 3}
+      width: 1
+    - sliderObject: {fileID: 1612676429563618606, guid: 0a85eb4575278ef479cdca93e27a8dda,
+        type: 3}
+      width: 1
+    - sliderObject: {fileID: 1612676429563618606, guid: f421b2c5b378c514f932c35fbb0c837f,
+        type: 3}
+      width: 1
+    - sliderObject: {fileID: 1612676429563618606, guid: 55f4c60a80585d146873a3d6fc712597,
+        type: 3}
+      width: 1
+    - sliderObject: {fileID: 1612676429563618606, guid: 0e351a4b79c331c40843a3f5dd3dce98,
+        type: 3}
+      width: 1
+    - sliderObject: {fileID: 1612676429563618606, guid: cf26dd49aa210484b8c950720aa227e6,
+        type: 3}
+      width: 1
+    - sliderObject: {fileID: 1612676429563618606, guid: c7399ff7f59644849a17c54a0a27b928,
+        type: 3}
+      width: 4
+    duration: 60
+  - BiomeName: Transition
+    Floor: {fileID: 1156367693171101932, guid: f5dc296812ce76544ab96a5a6c9aadcf, type: 3}
+    sliders:
+    - sliderObject: {fileID: 1612676429563618606, guid: 57b0c8fe2753b8844b99b369d98d8166,
+        type: 3}
+      width: 5.2
+    duration: 1
+  - BiomeName: DEEP SEA
+    Floor: {fileID: 1156367693171101932, guid: f5dc296812ce76544ab96a5a6c9aadcf, type: 3}
+    sliders:
+    - sliderObject: {fileID: 1612676429563618606, guid: ba6835d448168424894d2e72b7e4a77a,
+        type: 3}
+      width: 1
+    - sliderObject: {fileID: 1612676429563618606, guid: dbba7c08a7b8f15409400ad61d2e5861,
+        type: 3}
+      width: 1
+    - sliderObject: {fileID: 1612676429563618606, guid: 860674e313c13584297fecdde00dc039,
+        type: 3}
+      width: 1
+    - sliderObject: {fileID: 1612676429563618606, guid: c7399ff7f59644849a17c54a0a27b928,
+        type: 3}
+      width: 4
+    duration: 60
+  - BiomeName: Transition
+    Floor: {fileID: 1156367693171101932, guid: 978a3f4d276842d4e9dc8eeb548b24d5, type: 3}
+    sliders:
+    - sliderObject: {fileID: 1612676429563618606, guid: 887fa2e773e92d947840fbb2aa08a9a2,
+        type: 3}
+      width: 5.2
+    duration: 1
+  - BiomeName: Swamp
+    Floor: {fileID: 1156367693171101932, guid: 978a3f4d276842d4e9dc8eeb548b24d5, type: 3}
+    sliders:
+    - sliderObject: {fileID: 1612676429563618606, guid: ba6835d448168424894d2e72b7e4a77a,
+        type: 3}
+      width: 1
+    duration: 100
+  - BiomeName: Transition
+    Floor: {fileID: 1156367693171101932, guid: b40c078a4ac993d4ba7784b75ebf2c48, type: 3}
+    sliders:
+    - sliderObject: {fileID: 1612676429563618606, guid: ff0fd148cf6e7cc4da41c0061930b0bc,
+        type: 3}
+      width: 5.2
+    duration: 1
+  - BiomeName: Lava
+    Floor: {fileID: 1156367693171101932, guid: b40c078a4ac993d4ba7784b75ebf2c48, type: 3}
+    sliders:
+    - sliderObject: {fileID: 1612676429563618606, guid: ba6835d448168424894d2e72b7e4a77a,
+        type: 3}
+      width: 1
+    - sliderObject: {fileID: 1612676429563618606, guid: ba6835d448168424894d2e72b7e4a77a,
+        type: 3}
+      width: 1
+    duration: 100
