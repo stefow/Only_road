@@ -5,8 +5,6 @@ using UnityEngine;
 public class LevelMainBehaviour : MonoBehaviour
 {
     public bool start = false;
-    public AnimalList animalList;
-    public VehicleslList vehicles;
     public List<GameObject> Spawn;
     public GameObject Vehicle;
     public GameObject Animal;

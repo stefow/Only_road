@@ -2,136 +2,23 @@ Initialize engine version: 5.4.3f1 (01f4c123905a)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
+    Renderer: NVIDIA GeForce RTX 3070 (ID=0x2484)
     Vendor:   NVIDIA
     VRAM:     3072 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: D:\Programiranje\Only_road\Only_road_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading D:\Programiranje\Only_road\Only_road_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: D:\Programiranje\Only_road\Only_road_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading D:\Programiranje\Only_road\Only_road_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: D:\Programiranje\Only_road\Only_road_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading D:\Programiranje\Only_road\Only_road_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: D:\Programiranje\Only_road\Only_road_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading D:\Programiranje\Only_road\Only_road_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: D:\Programiranje\Only_road\Only_road_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading D:\Programiranje\Only_road\Only_road_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.026 seconds
-Platform assembly: D:\Programiranje\Only_road\Only_road_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: D:\Programiranje\Only_road\Only_road_Data\Managed\System.dll (this message is harmless)
-desktop: 1920x1080 75Hz; virtual: 3840x1156 at -1920,0
+Platform assembly: E:\UnityMain\Only_road\Only_road_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\UnityMain\Only_road\Only_road_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\UnityMain\Only_road\Only_road_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\UnityMain\Only_road\Only_road_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\UnityMain\Only_road\Only_road_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\UnityMain\Only_road\Only_road_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: E:\UnityMain\Only_road\Only_road_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading E:\UnityMain\Only_road\Only_road_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: E:\UnityMain\Only_road\Only_road_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading E:\UnityMain\Only_road\Only_road_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.254 seconds
+Platform assembly: E:\UnityMain\Only_road\Only_road_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\UnityMain\Only_road\Only_road_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 165Hz; virtual: 3840x2160 at -1920,-1080
 <RI> Initializing input.
 <RI> Input initialized.
-<RI> Initialized touch support.
-UnloadTime: 0.474200 ms
-Setting up 6 worker threads for Enlighten.
-  Thread -> id: 3498 -> priority: 1 
-  Thread -> id: 49f8 -> priority: 1 
-  Thread -> id: 3e68 -> priority: 1 
-  Thread -> id: 2850 -> priority: 1 
-  Thread -> id: 3df8 -> priority: 1 
-  Thread -> id: 77b0 -> priority: 1 
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.841500 ms
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1054.
-Total: 0.189900 ms (FindLiveObjects: 0.021000 ms CreateObjectMapping: 0.014200 ms MarkObjects: 0.149700 ms  DeleteObjects: 0.004400 ms)
-
-down61(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-up61(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-down61(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-up61(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-down61(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-up02(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-down02(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-down02(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-up02(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-down02(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-up43(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-down43(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-down43(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-up43(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-up43(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-down14(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-up14(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-up14(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-up05(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-down05(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-up66(Clone)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-kraj
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-Score_b
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.630000 ms
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1054.
-Total: 0.189900 ms (FindLiveObjects: 0.020800 ms CreateObjectMapping: 0.014100 ms MarkObjects: 0.150200 ms  DeleteObjects: 0.004100 ms)
-
