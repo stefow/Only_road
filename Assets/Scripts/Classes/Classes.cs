@@ -2,7 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+public enum Rarity
+{
+    Common,
+    Uncommon,
+    Rare,
+    Legendary
+}
 [Serializable]
 public class Cart : ShopItem
 {
@@ -16,27 +22,7 @@ public class Cart : ShopItem
 [Serializable]
 public class Animal : ShopItem
 {
-    public GameObject Prefab;
-    public AudioClip Happy;
-    public AudioClip Danger;
-    public AudioClip Sad;
-
-    AudioSource AnimalSound;
-    public void PlayHappy()
-    {
-        AnimalSound.clip = Happy;
-        AnimalSound.Play();
-    }
-    public void PlaySad()
-    {
-        AnimalSound.clip = Sad;
-        AnimalSound.Play();
-    }
-    public void PlayDanger()
-    {
-        AnimalSound.clip = Danger;
-        AnimalSound.Play();
-    }
+    public Rarity Type;
     public Animal()
     {
         id = "A";
