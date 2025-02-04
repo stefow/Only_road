@@ -14,17 +14,13 @@ public class Spawner : MonoBehaviour
     [SerializeField] float speedUpDistance = 40;
     [SerializeField] GameObject pointer;
     
-    private Player player;
     bool firstTry=true;
     bool spawned = false;
     float spawnNextPos = 0;
     int prevSlider = -1;
     void Start()
     {
-        player=GetComponentInParent<Player>();
         spawnNextPos =transform.position.x;
-        if(player.maxDistance>40) firstTry = false;
-        else firstTry = true;
         
     }
     void Update()

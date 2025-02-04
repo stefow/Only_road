@@ -15,118 +15,135 @@ MonoBehaviour:
   DefaultUnlockedImage: {fileID: 0}
   Carts:
   - name: Standard Cart
-    id: 1
+    id: DefaultCart
     price: 100
     image: {fileID: 21300000, guid: b159202b0d12c774b9f88b681c10de53, type: 3}
     description: 
-    defaultOn: 1
-    unlocked: 1
-    Prefab: {fileID: 5717366154202778163, guid: eeda9c94cb838084787577c502946206,
+    Prefab: {fileID: 5523302643697964598, guid: af68f3558c33965439a4b5ca31dd3c13,
+      type: 3}
+  - name: Metal cart
+    id: C1
+    price: 150
+    image: {fileID: 21300000, guid: b159202b0d12c774b9f88b681c10de53, type: 3}
+    description: 
+    Prefab: {fileID: 5523302643697964598, guid: af68f3558c33965439a4b5ca31dd3c13,
+      type: 3}
+  - name: Snow Cart
+    id: C2
+    price: 200
+    image: {fileID: 0}
+    description: 
+    Prefab: {fileID: 5523302643697964598, guid: af68f3558c33965439a4b5ca31dd3c13,
+      type: 3}
+  - name: Bug Cart
+    id: C3
+    price: 250
+    image: {fileID: 0}
+    description: 
+    Prefab: {fileID: 5523302643697964598, guid: af68f3558c33965439a4b5ca31dd3c13,
       type: 3}
   Animals:
   - name: Cat
-    id: A1
+    id: DefaultAnimal
     price: 100
     image: {fileID: 21300000, guid: da3a18610a58139459a2b9bf7f2bf3bf, type: 3}
     description: 
-    defaultOn: 1
-    unlocked: 1
+    Prefab: {fileID: 5717366154202778163, guid: eeda9c94cb838084787577c502946206,
+      type: 3}
     Type: 0
   - name: Fox
     id: A2
     price: 200
     image: {fileID: 21300000, guid: a8ec4a29a90d0904eaf04e2447b0e4ec, type: 3}
     description: 
-    defaultOn: 0
-    unlocked: 1
+    Prefab: {fileID: 4568539701704079719, guid: 0bcc0f4dcab762547b10303400157432,
+      type: 3}
     Type: 0
   - name: Pig
     id: A3
     price: 222
     image: {fileID: 21300000, guid: e62ec766cb88ad4438853dd588addd8f, type: 3}
     description: 
-    defaultOn: 0
-    unlocked: 1
+    Prefab: {fileID: 8757686003690317535, guid: 2911051921278494b87b71ca1e8a65b7,
+      type: 3}
     Type: 0
   - name: Wolf
     id: A4
     price: 300
     image: {fileID: 21300000, guid: ba79b490e7bde864e95a96de6307599d, type: 3}
     description: 
-    defaultOn: 0
-    unlocked: 1
+    Prefab: {fileID: 432994110573728089, guid: 16420976df7baf848892a50319d26c58, type: 3}
     Type: 0
   - name: Panda
     id: A5
     price: 400
     image: {fileID: 21300000, guid: eeeba8defc8cf1343811d792b9042c87, type: 3}
     description: 
-    defaultOn: 0
-    unlocked: 1
+    Prefab: {fileID: 7601859490367235725, guid: 45d41ebdefbd5e44fa73e10f22793f04,
+      type: 3}
     Type: 0
   - name: Sparrow
     id: A6
     price: 400
     image: {fileID: 21300000, guid: ab35f004e46a08846ab84803a21ca63f, type: 3}
     description: 
-    defaultOn: 0
-    unlocked: 1
+    Prefab: {fileID: 1726962958676765844, guid: cad50ee7c245c024a929a10741ed0d3d,
+      type: 3}
     Type: 0
   - name: Cow
     id: A7
     price: 400
     image: {fileID: 21300000, guid: 30b0692580e60e944b488d62d7e52f8f, type: 3}
     description: 
-    defaultOn: 0
-    unlocked: 1
+    Prefab: {fileID: 7486919516240463662, guid: a63af76f7cf8be04598ac0e26266cbe0,
+      type: 3}
     Type: 0
   - name: Gecko
     id: A8
     price: 400
     image: {fileID: 21300000, guid: 5814372ae5236ae4d88846fe7b7894aa, type: 3}
     description: 
-    defaultOn: 0
-    unlocked: 1
+    Prefab: {fileID: 1283408635915462021, guid: 1df907b60da561548b3faa90c6b0e8e8,
+      type: 3}
     Type: 0
   - name: Dachshund
     id: A9
     price: 400
     image: {fileID: 21300000, guid: 2f505f91d7b5c694f906401c519bbdeb, type: 3}
     description: 
-    defaultOn: 0
-    unlocked: 1
+    Prefab: {fileID: 6713117685936582857, guid: 0be02c72cf8d6864ebe7c3c86d36e6d6,
+      type: 3}
     Type: 0
   - name: Squirrel
     id: A10
     price: 400
     image: {fileID: 21300000, guid: 14d88b5690ca8cf46905b5ea38245ca2, type: 3}
     description: 
-    defaultOn: 0
-    unlocked: 1
+    Prefab: {fileID: 3208349020483910481, guid: fae60137050a9b44390e591755d97b85,
+      type: 3}
     Type: 0
   - name: Sheep
     id: A11
     price: 400
     image: {fileID: 21300000, guid: 8aedc6c2a84da9147b33e7bea2c9f9e9, type: 3}
     description: 
-    defaultOn: 0
-    unlocked: 1
+    Prefab: {fileID: 680093273777695568, guid: 26736b13f646e574cad5f67c408b3771, type: 3}
     Type: 0
   - name: Chicken
     id: A12
     price: 400
     image: {fileID: 21300000, guid: c0e2bf488c659d6449aacdf30ed7a6cd, type: 3}
     description: 
-    defaultOn: 0
-    unlocked: 1
+    Prefab: {fileID: 3582724160446607568, guid: 3a0d744fe3b5ab84491cefca3c3aebf7,
+      type: 3}
     Type: 0
   - name: Eagle
     id: A13
     price: 400
     image: {fileID: 21300000, guid: 91cab2991f8b4b84ca554afd4f40fc3b, type: 3}
     description: 
-    defaultOn: 0
-    unlocked: 1
+    Prefab: {fileID: 4596316659257175309, guid: 956264c8986dbe64285c2b6f7ca03565,
+      type: 3}
     Type: 0
   PowerUps:
   - name: Time Freeze
@@ -135,8 +152,6 @@ MonoBehaviour:
     image: {fileID: 21300000, guid: d5d7cd667fa8f7449a12e3eaf1211836, type: 3}
     description: Temporarily halts the approaching wave, giving players extra time
       to move sliders and clear the way.
-    defaultOn: 0
-    unlocked: 1
     Prefab: {fileID: 5717366154202778163, guid: eeda9c94cb838084787577c502946206,
       type: 3}
   - name: Speed Boost
@@ -145,8 +160,6 @@ MonoBehaviour:
     image: {fileID: 21300000, guid: d5d7cd667fa8f7449a12e3eaf1211836, type: 3}
     description: Increases the movement speed of the animals for a short duration,
       helping them pass through obstacles faster.
-    defaultOn: 0
-    unlocked: 1
     Prefab: {fileID: 5717366154202778163, guid: eeda9c94cb838084787577c502946206,
       type: 3}
   - name: Shield
@@ -155,8 +168,6 @@ MonoBehaviour:
     image: {fileID: 21300000, guid: d5d7cd667fa8f7449a12e3eaf1211836, type: 3}
     description: Grants the animal temporary protection from the wave, preventing
       a game-over if hit.
-    defaultOn: 0
-    unlocked: 1
     Prefab: {fileID: 5717366154202778163, guid: eeda9c94cb838084787577c502946206,
       type: 3}
   - name: Path Hint
@@ -165,8 +176,6 @@ MonoBehaviour:
     image: {fileID: 21300000, guid: d5d7cd667fa8f7449a12e3eaf1211836, type: 3}
     description: Highlights the optimal path for a limited time, guiding the player
       on where to move sliders.
-    defaultOn: 0
-    unlocked: 1
     Prefab: {fileID: 5717366154202778163, guid: eeda9c94cb838084787577c502946206,
       type: 3}
   - name: Double Points
@@ -175,8 +184,6 @@ MonoBehaviour:
     image: {fileID: 21300000, guid: d5d7cd667fa8f7449a12e3eaf1211836, type: 3}
     description: Doubles the points earned for a set period, rewarding precision
       and speed.
-    defaultOn: 0
-    unlocked: 1
     Prefab: {fileID: 5717366154202778163, guid: eeda9c94cb838084787577c502946206,
       type: 3}
   - name: Extra Life
@@ -184,7 +191,5 @@ MonoBehaviour:
     price: 0
     image: {fileID: 21300000, guid: d5d7cd667fa8f7449a12e3eaf1211836, type: 3}
     description: Grants the player an additional chance if the wave hits an animal.
-    defaultOn: 0
-    unlocked: 1
     Prefab: {fileID: 5717366154202778163, guid: eeda9c94cb838084787577c502946206,
       type: 3}

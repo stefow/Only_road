@@ -12,13 +12,13 @@ public class SliderMove : MonoBehaviour
     public bool isDragging = false;
     private Vector3 offset;
     private ButtonFunctions buttonFunctions;
-    private Collider collider;
+    private Collider acollider;
     private void Start()
     {
         buttonFunctions= EventSystem.current.GetComponent<ButtonFunctions>();
         sound = GetComponent<AudioSource>();
         sound.volume = 0.2f;
-        collider = GetComponent<Collider>();
+        acollider = GetComponent<Collider>();
         int random = Random.Range(-1, 2);
         transform.position = new Vector3(transform.position.x, random * 2,transform.position.z);
     }
@@ -27,7 +27,7 @@ public class SliderMove : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            collider.isTrigger = false;
+            acollider.isTrigger = false;
             offset = transform.position - GetMouseWorldPosition();
             isDragging = true;
         }
@@ -40,7 +40,7 @@ public class SliderMove : MonoBehaviour
             float clampedY = Mathf.Clamp(transform.position.y, minY, maxY);
             float snappedY = Mathf.Round(clampedY / snapInterval) * snapInterval;
             transform.position = new Vector3(transform.position.x, snappedY, transform.position.z);
-            collider.isTrigger = true;
+            acollider.isTrigger = true;
             if (buttonFunctions.SoundEnabled)sound.Play();   
         }
 

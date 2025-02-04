@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -14,6 +16,29 @@ public class ShopData : ScriptableObject
     public List<Cart> Carts;
     public List<Animal> Animals;
     public List<PowerUp> PowerUps;
+
+    public GameObject FindCartById(string id)
+    {
+        foreach (Cart cart in Carts)
+        {
+            if (cart.id == id)
+            {
+                return cart.Prefab;
+            }
+        }
+        return Carts[0].Prefab;
+    }
+    public GameObject FindAnimalById(string id)
+    {
+        foreach (Animal animal in Animals)
+        {
+            if (animal.id == id)
+            {
+                return animal.Prefab;
+            }
+        }
+        return Animals[0].Prefab;
+    }
 }
 
 [Serializable]
@@ -24,6 +49,4 @@ public class ShopItem
     public int price;
     public Sprite image;
     public string description;
-    public bool defaultOn;
-    public bool unlocked;
 }

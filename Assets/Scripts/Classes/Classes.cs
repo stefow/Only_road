@@ -9,6 +9,7 @@ public enum Rarity
     Rare,
     Legendary
 }
+
 [Serializable]
 public class Cart : ShopItem
 {
@@ -22,6 +23,7 @@ public class Cart : ShopItem
 [Serializable]
 public class Animal : ShopItem
 {
+    public GameObject Prefab;
     public Rarity Type;
     public Animal()
     {

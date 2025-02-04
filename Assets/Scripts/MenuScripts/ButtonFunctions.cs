@@ -7,13 +7,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class ButtonFunctions : MonoBehaviour
 {
-    public Player player;
     public Destroyer destroyer;
-    
-    public bool MusicEnabled=true;
-    public bool SoundEnabled=true;
 
-    //slike
+    public bool MusicEnabled;
+    public bool SoundEnabled;
+
     public Sprite mutedMusic;
     public Sprite mutedSound;
     public Sprite soundOn;
@@ -23,53 +21,12 @@ public class ButtonFunctions : MonoBehaviour
     public Button musicButton;
     public AudioSource musicSource;
     public List<AudioSource> soundSource;
-    private Settings settings;
-    private void Start()
-    {
-        settings = Settings.LoadSettings();
-        MusicEnabled=settings.musicEnabled;
-        SoundEnabled=settings.soundEnabled;
-        if (MusicEnabled)
-        {
-            musicButton.image.sprite = musicOn;
-            MusicEnabled = true;
-        }
-        else
-        {
-            musicSource.volume = 0;
-            musicButton.image.sprite = mutedMusic;
-            MusicEnabled = false;
-        }
-
-        if (SoundEnabled)
-        {
-            soundButton.image.sprite = soundOn;
-            SoundEnabled = true;
-        }
-        else
-        {
-            foreach (AudioSource source in soundSource)
-            {
-                source.volume = 0;
-            }
-            soundButton.image.sprite = mutedSound;
-            SoundEnabled = false;
-        }
-    }
-
-
     public void OpenScene(int index)
     {
-        //settings.musicEnabled = MusicEnabled;
-        //settings.soundEnabled = SoundEnabled;
-        //settings.SaveSettings();
         SceneManager.LoadScene(index);
     }
     public void ExitGame()
     {
-        //settings.musicEnabled = MusicEnabled;
-        //settings.soundEnabled = SoundEnabled; 
-        //settings.SaveSettings();
         Application.Quit();
     }
     public void EnableObject(GameObject target)
@@ -82,12 +39,11 @@ public class ButtonFunctions : MonoBehaviour
     }
     public void StopTime(bool Start)
     {
-        player.start = Start;
-        destroyer.start = Start;
+
     }
     public void MusicOptions()
-    { 
-        if(MusicEnabled)
+    {
+        if (MusicEnabled)
         {
             musicSource.volume = 0;
             musicButton.image.sprite = mutedMusic;
@@ -96,8 +52,8 @@ public class ButtonFunctions : MonoBehaviour
         else
         {
             musicButton.image.sprite = musicOn;
-            MusicEnabled=true;
-            musicSource.volume=0.5f;
+            MusicEnabled = true;
+            musicSource.volume = 0.5f;
         }
     }
     public void SoundOptions()
@@ -113,13 +69,35 @@ public class ButtonFunctions : MonoBehaviour
         }
         else
         {
-            soundButton.image.sprite= soundOn;
-            SoundEnabled=true;
+            soundButton.image.sprite = soundOn;
+            SoundEnabled = true;
             foreach (AudioSource source in soundSource)
             {
                 source.volume = 0.8f;
             }
         }
     }
-    
+    public void SlideDownPanel(RectTransform Panel)
+    {
+        Panel.localPosition = new Vector2(0, 450f);
+        Panel.gameObject.SetActive(true);
+
+        StartCoroutine(MOveObject(Panel, new Vector2(0, 0),false));
+        
+    }
+
+    public void SlideUpPanel(RectTransform Panel)
+    {
+        StartCoroutine(MOveObject(Panel, new Vector2(0, 450f), true));
+    }
+
+    private IEnumerator MOveObject( RectTransform panel, Vector2 destination,bool hideOnEnd)
+    {
+        while (panel.transform.localPosition.y!=destination.y)
+        {
+            panel.transform.localPosition = Vector2.MoveTowards(panel.transform.localPosition, destination, 1600 * Time.deltaTime);
+            yield return null;
+        }
+        panel.gameObject.SetActive(!hideOnEnd);
+    }
 }
