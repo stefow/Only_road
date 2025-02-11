@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 33329325208460548}
   - component: {fileID: 23853866499107206}
   - component: {fileID: 3859531942348199948}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: Wall_1-4
-  m_TagString: Untagged
+  m_TagString: Blocked
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33329325208460548
 MeshFilter:
@@ -103,5 +103,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.1864033, y: 2.00237, z: 0.82}
-  m_Center: {x: 0.00026887655, y: 1.0009762, z: -0.00065533817}
+  m_Size: {x: 2.1864033, y: 2.00237, z: 0.20293921}
+  m_Center: {x: 0.00026893616, y: 1.0009762, z: -0.00065532327}

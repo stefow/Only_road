@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 9222880428535286468}
   - component: {fileID: 5842695623546800704}
   - component: {fileID: 2487957087780998922}
-  - component: {fileID: 6392152805772958422}
-  m_Layer: 2
+  - component: {fileID: 7310699920988693902}
+  m_Layer: 0
   m_Name: DeepSea
-  m_TagString: Destroyable
+  m_TagString: Fail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   waveFrequency: 0.5
   waveLength: 0.5
   waveOriginPosition: {x: 0, y: 0, z: 0}
---- !u!65 &6392152805772958422
+--- !u!65 &7310699920988693902
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,8 +122,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 50}
-  m_Center: {x: 80, y: -2.2, z: 0}
+  m_Size: {x: 50, y: 0.49609578, z: 50}
+  m_Center: {x: 7.267334e-25, y: 0.0017159507, z: 0}
 --- !u!1 &1687421507274280786
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,8 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5023234467372999788}
-  - component: {fileID: 2089606675040579726}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: GameObject
   m_TagString: Fail
   m_Icon: {fileID: 0}
@@ -156,24 +155,3 @@ Transform:
   m_Father: {fileID: 1128962555359882859}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2089606675040579726
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687421507274280786}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 50, y: 1, z: 50}
-  m_Center: {x: 0, y: 0, z: 0}

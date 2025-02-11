@@ -10,9 +10,13 @@ public class CartMovement : MonoBehaviour
     //Physics
     public float speed = 5;
     public int maxDistance=0;
-
+    public Transform ObstacleCheckPosition;
     public bool startMoving = true;
     private Rigidbody rb;
+
+    //Front detection
+    public float FrontDetectDistance=1.5f;
+    public LayerMask IgnoredFrontHitLayers;
 
     private void Awake()
     {
@@ -20,10 +24,15 @@ public class CartMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (startMoving && IsGrounded())
+        if(IsWayClear())
         {
-            maxDistance = (int)transform.position.x;
-            MoveRb();
+            Debug.DrawRay(ObstacleCheckPosition.position, new Vector3(2, 0, 0), Color.green);
+            LevelMainBehavior.Instance.Move=true;
+        }
+        else 
+        {
+            Debug.DrawRay(ObstacleCheckPosition.position, new Vector3(2, 0, 0), Color.red);
+            LevelMainBehavior.Instance.Move = false;
         }
     }
     private void MoveRb()
@@ -43,12 +52,22 @@ public class CartMovement : MonoBehaviour
             Debug.DrawRay(this.transform.position, Vector3.down, Color.red);
         }
         return grounded;
+
+    }
+    
+    private bool IsWayClear()
+    {
+        return !Physics.Raycast(ObstacleCheckPosition.position, Vector3.right, FrontDetectDistance, IgnoredFrontHitLayers); ;
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Fail")
         {
             LevelMainBehavior.Instance.Failed();
+        }
+        if (other.transform.tag == "ClickCollider")
+        {
+            Destroy(other);
         }
     }
 

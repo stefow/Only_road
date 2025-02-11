@@ -22,14 +22,12 @@ public class LevelMainBehavior : MonoBehaviour
     public TMP_Text FinishedCoinsCollectedText;
     public TMP_Text FinishedCoinsSavedText;
 
-    public bool start = false;
-    public List<GameObject> Spawn;
     public GameObject Cart;
     public GameObject Animal;
     public GameObject Player;
 
     public GameObject Cam;
-
+    public bool Move = true;
     private int CoinsCollected;
     private int Distance;
     private int BestDistance;
@@ -73,7 +71,7 @@ public class LevelMainBehavior : MonoBehaviour
     }
     private void SpawnEquipped()
     {
-        Instantiate(Spawn[0], new Vector3(0, 0, 0), Quaternion.identity);
+        
 
         Cart = Instantiate(shopData.FindCartById(GameData.GetInstance().EquippedCart),
             Player.transform.position, Quaternion.Euler(new Vector3(0, -90, 0)));
@@ -85,10 +83,11 @@ public class LevelMainBehavior : MonoBehaviour
     }
     public void Failed()
     {
-        Player.SetActive(false);
-        ActiveGamePanel.SetActive(false);
-        EndPanel.SetActive(true);
-        SaveProgress();
+        //Player.SetActive(false);
+        //ActiveGamePanel.SetActive(false);
+        //EndPanel.SetActive(true);
+        //SaveProgress();
+        Debug.Log("bruh");
     }
     public void SaveProgress()
     {

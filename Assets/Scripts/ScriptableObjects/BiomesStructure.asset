@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: BiomesStructure
   m_EditorClassIdentifier: 
   list:
-  - BiomeName: WOODS 1
+  - BiomeName: Forest
     Floor: {fileID: 1156367693171101932, guid: 256dd0cb0cfce4244a1f39f9d54436cd, type: 3}
     sliders:
-    - sliderObject: {fileID: 1612676429563618606, guid: 01a567935a259be4e9e332ddbb44bd3b,
+    - sliderObject: {fileID: 1612676429563618606, guid: 359579965d31fd24cb132f1cda571759,
         type: 3}
       width: 1
     - sliderObject: {fileID: 1612676429563618606, guid: 87e47d26ed8bb664395a1f8d8e5111de,
