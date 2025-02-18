@@ -5,18 +5,8 @@ using UnityEngine;
 
 public class Destroyer : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        if (other.transform.tag == "Destroyable")
-        {
-            Destroy(other.gameObject);
-        }
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform.tag== "Destroyable")
-        {
-            Destroy(collision.gameObject);
-        }
+        Destroy(other.gameObject);
     }
 }

@@ -6,9 +6,9 @@ public class Move : MonoBehaviour
 {
     void Update()
     {
-        if(LevelMainBehavior.Instance.Move)
+        if(LevelMainBehavior.Instance.Move && LevelMainBehavior.Instance.IsStared())
         {
-            transform.position += new Vector3(-2, 0, 0) * Time.deltaTime;
+            transform.position += new Vector3(-LevelMainBehavior.Instance.Speed, 0, 0) * Time.deltaTime;
         }
         
     }

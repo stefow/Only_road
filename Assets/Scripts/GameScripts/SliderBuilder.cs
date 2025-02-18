@@ -1,3 +1,5 @@
+// Ignore Spelling: Spawnable
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +9,11 @@ public class SliderBuilder : MonoBehaviour
 {
     public GameObject[] BlockedParts;
     public GameObject[] ClearedParts;
+    public GameObject Foundation;
+    public GameObject Platform;
+    public SpawnableItems SpawnableItems;
+    public float SpawnableItemsChance;
+
     private int MaxSliderHeight = 3;
     private List<GameObject> ChosenParts;
     private void Awake()
@@ -33,6 +40,9 @@ public class SliderBuilder : MonoBehaviour
         foreach(GameObject part in ChosenParts)
         {
             Instantiate(part, this.transform.position + new Vector3(0, j * 2, 0), Quaternion.identity, this.gameObject.transform);
+            Instantiate(Platform, this.transform.position + new Vector3(0, j * 2, 0), Quaternion.identity, this.gameObject.transform);
+            if(Random.Range(0, 101)<=SpawnableItemsChance)
+                Instantiate(SpawnableItems.GetRandomItem(), this.transform.position + new Vector3(0, j * 2, 0), Quaternion.identity, this.gameObject.transform);
             j++;
         }
     }

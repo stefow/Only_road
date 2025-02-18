@@ -2,38 +2,88 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.XR;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject ObjectsToSpawn;
-    public List<GameObject> Spawn;
-    public bool SpawnOnStart = false;
+    public string SliderTag;
+    public string FloorTag;
+    public LevelDesign levelDesign;
+    public GameObject Spawn;
+    public Transform DesiredSpawnPosition;
+
+    private int biomeIndex = 0;
+    private int sliderCounter = 0;
+    private GameObject CurrentSlider;
+    private GameObject CurrentFloor;
+    float sliderOffset = 0;
+    float floorOffset = 0;
     void Start()
     {
-        if(SpawnOnStart) SpawnStart();
-        SpawnRandomSlider();
+        CurrentSlider = this.gameObject;
+        CurrentFloor = this.gameObject;
+        SpawnStart();
+        StartCoroutine(GoToInitialPosition());
     }
-    private void OnTriggerExit(Collider other)
+    private Slider GetNextSlider()
     {
-        if(other.gameObject.tag=="ClickCollider")
+        if (sliderCounter < levelDesign.listOfBiomes[biomeIndex].Duration)
         {
-            SpawnRandomSlider();
+            sliderCounter++;
+            
+        }
+        else
+        {
+            sliderCounter = 0;
+            if (levelDesign.listOfBiomes.Count > biomeIndex + 1)
+            {
+                biomeIndex++;
+                RenderSettings.skybox = levelDesign.listOfBiomes[biomeIndex].Skybox;
+            }
+        }
+        return levelDesign.listOfBiomes[biomeIndex].GetRandomSlider();
+    }
+    private void Update()
+    {
+        if (Vector3.Distance(CurrentSlider.transform.position, this.transform.position)>= sliderOffset)
+        {
+            SpawnSlider();
+        }
+        if (Vector3.Distance(CurrentFloor.transform.position, this.transform.position) >= floorOffset)
+        {
+            SpawnFloor();
         }
     }
-    private void SpawnRandomSlider()
+
+    private void SpawnSlider()
     {
-        GameObject slider = Instantiate(ObjectsToSpawn,this.transform.position, Quaternion.identity);
-        slider.AddComponent<Move>();
-        slider.transform.Rotate(0,90,0);
+        Slider slider = GetNextSlider();
+        CurrentSlider = Instantiate(slider.prefab, transform.position, Quaternion.identity);
+        sliderOffset = slider.Width;
+        CurrentSlider.AddComponent<Move>();
+        CurrentSlider.transform.Rotate(0,90,0);
     }
-    private void SpawnFloor(int biome)
+    private void SpawnFloor()
     {
-        Instantiate(ObjectsToSpawn, new Vector3(50, -2.35f, 13.25f), Quaternion.identity).AddComponent<Move>();
+        CurrentFloor = Instantiate(levelDesign.GetFloor(biomeIndex), transform.position, Quaternion.identity);
+        floorOffset = levelDesign.listOfBiomes[biomeIndex].FloorWidth;
+        CurrentFloor.AddComponent<Move>();
     }
     private void SpawnStart()
     {
-        Instantiate(Spawn[0], new Vector3(0, 0, 0), Quaternion.identity).AddComponent<Move>();
+        Instantiate(Spawn, new Vector3(0, 0, 0),Quaternion.identity).AddComponent<Move>();
+    }
+    private IEnumerator GoToInitialPosition()
+    {
+        while (this.transform.position.x < DesiredSpawnPosition.position.x)
+        {
+            this.transform.position += Vector3.right*Time.deltaTime*20;
+            yield return null;
+        } 
+        LevelMainBehavior.Instance.StartGame(true);
+        
     }
 }

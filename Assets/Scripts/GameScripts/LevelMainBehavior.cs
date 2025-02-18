@@ -28,6 +28,12 @@ public class LevelMainBehavior : MonoBehaviour
 
     public GameObject Cam;
     public bool Move = true;
+    public float Speed = 2;
+    public float SpeedIncrement = 0.2f;
+    public float MaxSpeed=6;
+
+    public bool GameStarted = false;
+
     private int CoinsCollected;
     private int Distance;
     private int BestDistance;
@@ -92,5 +98,31 @@ public class LevelMainBehavior : MonoBehaviour
     public void SaveProgress()
     {
 
+    }
+    public void StartGame(bool state)
+    {
+        if (state) 
+        {
+            GameStarted = true;
+            StartCoroutine(SpeedUp());
+        }
+        else
+        {
+            GameStarted = false;
+        }
+        
+    }
+    public bool IsStared()
+    {
+        return GameStarted;
+    }
+    private IEnumerator SpeedUp()
+    {
+        while (Speed<MaxSpeed)
+        {
+            Speed += SpeedIncrement;
+            yield return new WaitForSeconds(1);
+        }
+        
     }
 }
