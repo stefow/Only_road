@@ -10,7 +10,7 @@ public class Coin : MonoBehaviour
     {
         if (other.transform.tag == "Player")
         {
-            LevelMainBehavior.Instance.addCoins(value);
+            LevelMainBehavior.Instance.AddCoins(value);
             Destroy(this.gameObject);
         }
     }

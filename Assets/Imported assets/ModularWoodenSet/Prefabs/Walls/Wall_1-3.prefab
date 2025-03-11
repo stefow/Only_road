@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4889434907362018}
   - component: {fileID: 33172303636700076}
   - component: {fileID: 23965797359754870}
-  - component: {fileID: 2403849300113291247}
-  m_Layer: 2
+  - component: {fileID: 3973017140075617877}
+  m_Layer: 8
   m_Name: Wall_1-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33172303636700076
 MeshFilter:
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2403849300113291247
+--- !u!65 &3973017140075617877
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,5 +103,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0000005, y: 1.9721992, z: 0.87}
-  m_Center: {x: -0.0000007748604, y: 0.99877334, z: -0.017074618}
+  m_Size: {x: 2.000001, y: 1.9721992, z: 0.06276467}
+  m_Center: {x: -0.00000077486055, y: 0.99877334, z: -0.017074622}

@@ -1,4 +1,4 @@
-// Ignore Spelling: Biome
+// Ignore Spelling: Biome Biomes
 
 using System.Collections;
 using System.Collections.Generic;

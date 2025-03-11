@@ -11,6 +11,8 @@ TagManager:
   - Blocked
   - Cleared
   - Sea
+  - Slider
+  - Indestructible
   layers:
   - Default
   - TransparentFX

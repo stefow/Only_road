@@ -1,8 +1,5 @@
 // Ignore Spelling: Spawnable
-
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class SliderBuilder : MonoBehaviour
@@ -42,7 +39,7 @@ public class SliderBuilder : MonoBehaviour
             Instantiate(part, this.transform.position + new Vector3(0, j * 2, 0), Quaternion.identity, this.gameObject.transform);
             Instantiate(Platform, this.transform.position + new Vector3(0, j * 2, 0), Quaternion.identity, this.gameObject.transform);
             if(Random.Range(0, 101)<=SpawnableItemsChance)
-                Instantiate(SpawnableItems.GetRandomItem(), this.transform.position + new Vector3(0, j * 2, 0), Quaternion.identity, this.gameObject.transform);
+                Instantiate(SpawnableItems.GetRandomItem().Prefab, this.transform.position + new Vector3(0, j * 2, 0), Quaternion.identity, this.gameObject.transform);
             j++;
         }
     }

@@ -1,27 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class LevelMainBehavior : MonoBehaviour
 {
     public static LevelMainBehavior Instance;
-
+    private UIController uIController;
+    private GameData gameData;
+    public Destroyer destroyer;
     public ShopData shopData;
-    //Canvases
-    public GameObject ActiveGamePanel;
-    public GameObject LoadingPanel;
-    public GameObject SettingsPanel;
-    public GameObject EndPanel;
-
-    public TMP_Text CoinsCollectedText;
-    public TMP_Text DistanceText;
-    public TMP_Text BestDistanceText;
-
-    public TMP_Text FinishedDistanceText;
-    public TMP_Text FinishedCoinsCollectedText;
-    public TMP_Text FinishedCoinsSavedText;
-
     public GameObject Cart;
     public GameObject Animal;
     public GameObject Player;
@@ -31,57 +17,52 @@ public class LevelMainBehavior : MonoBehaviour
     public float Speed = 2;
     public float SpeedIncrement = 0.2f;
     public float MaxSpeed=6;
-
     public bool GameStarted = false;
 
-    private int CoinsCollected;
-    private int Distance;
-    private int BestDistance;
+    public Material material;
+    public Color color;
+
+    private int coinsCollected;
+    private float distance;
+    private int bestDistance;
 
     private void Awake()
     {
         if(Instance == null)
         {
             Instance = this;
-            
         }
+        gameData = GameData.GetInstance();
         SpawnEquipped();
-        CoinsCollected=0; Distance=0;
-        BestDistance = GameData.GetInstance().Distance;
-
+        coinsCollected=0; 
+        distance=0;
+        bestDistance = gameData.Distance;
     }
-    void Start()
+    public void Start()
     {
-        SetUI();
+        //Application.targetFrameRate = 20;
+        uIController = UIController.Instance;
+        uIController.UpdateBestDistance(bestDistance);
     }
-
-    void Update()
+    public void AddCoins(int amount)
     {
-        UpdateUI();
+        coinsCollected += amount;
+        uIController.UpdateCurrentCoins(coinsCollected);
     }
-    public void addCoins(int amount)
+    private void Update()
     {
-        CoinsCollected += amount;
-    }
-    private void UpdateUI()
-    {
-        CoinsCollectedText.text = CoinsCollected.ToString();
-        DistanceText.text = Distance.ToString();
-        BestDistanceText.text = BestDistance.ToString();
-    }
-    private void SetUI()
-    {
-        Player.SetActive(true);
-        ActiveGamePanel.SetActive(true);
-        LoadingPanel.SetActive(false);
+        if (Move)
+        {
+            distance += Speed * Time.deltaTime;
+        }
+        destroyer.Chase(!Move);
+        uIController.UpdateDistance(distance);
     }
     private void SpawnEquipped()
     {
-        
-
-        Cart = Instantiate(shopData.FindCartById(GameData.GetInstance().EquippedCart),
+        Cart = Instantiate(shopData.FindCartById(gameData.EquippedCart),
             Player.transform.position, Quaternion.Euler(new Vector3(0, -90, 0)));
-        Animal = Instantiate(shopData.FindAnimalById(GameData.GetInstance().EquippedAnimal),
+        Animal = Instantiate(shopData.FindAnimalById(gameData.EquippedAnimal),
             Player.transform.position + new Vector3(0, 0.165f, 0), Quaternion.Euler(new Vector3(0, -90, 0)));
 
         Cart.transform.SetParent(Player.transform);
@@ -89,21 +70,19 @@ public class LevelMainBehavior : MonoBehaviour
     }
     public void Failed()
     {
-        //Player.SetActive(false);
-        //ActiveGamePanel.SetActive(false);
-        //EndPanel.SetActive(true);
-        //SaveProgress();
-        Debug.Log("bruh");
-    }
-    public void SaveProgress()
-    {
-
+        Player.SetActive(false);
+        Move = false;
+        uIController.UpdateFinishPanel((int)distance, coinsCollected, coinsCollected + gameData.Coins);
+        uIController.Finished();
+        if (distance > gameData.Distance) gameData.Distance = (int)distance;
+        gameData.Coins += coinsCollected;
+        gameData.Save();
     }
     public void StartGame(bool state)
     {
         if (state) 
         {
-            GameStarted = true;
+            UIController.Instance.ActiveGame();
             StartCoroutine(SpeedUp());
         }
         else
@@ -124,5 +103,9 @@ public class LevelMainBehavior : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         
+    }
+    IEnumerable TransitToSkyBox()
+    {
+        yield return new WaitForSeconds(1);
     }
 }

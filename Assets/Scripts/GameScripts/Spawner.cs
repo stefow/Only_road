@@ -1,11 +1,5 @@
-using JetBrains.Annotations;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.UIElements;
-using UnityEngine.XR;
 
 public class Spawner : MonoBehaviour
 {
@@ -19,14 +13,17 @@ public class Spawner : MonoBehaviour
     private int sliderCounter = 0;
     private GameObject CurrentSlider;
     private GameObject CurrentFloor;
-    float sliderOffset = 0;
-    float floorOffset = 0;
+    float sliderWidth = 0;
+    float floorWidth = 0;
+    private Vector3 offset = Vector3.zero;
     void Start()
     {
-        CurrentSlider = this.gameObject;
-        CurrentFloor = this.gameObject;
         SpawnStart();
+        SpawnSlider();
+        SpawnFloor();
         StartCoroutine(GoToInitialPosition());
+        StartCoroutine(levelDesign.listOfBiomes[biomeIndex].TransitionMaterial(0));
+        
     }
     private Slider GetNextSlider()
     {
@@ -41,18 +38,19 @@ public class Spawner : MonoBehaviour
             if (levelDesign.listOfBiomes.Count > biomeIndex + 1)
             {
                 biomeIndex++;
-                RenderSettings.skybox = levelDesign.listOfBiomes[biomeIndex].Skybox;
+                //RenderSettings.skybox = levelDesign.listOfBiomes[biomeIndex].SkyBox;
+                StartCoroutine(levelDesign.listOfBiomes[biomeIndex].TransitionMaterial(5));
             }
         }
         return levelDesign.listOfBiomes[biomeIndex].GetRandomSlider();
     }
     private void Update()
     {
-        if (Vector3.Distance(CurrentSlider.transform.position, this.transform.position)>= sliderOffset)
+        if (Mathf.Abs(CurrentSlider.transform.position.x - this.transform.position.x) >= sliderWidth)
         {
             SpawnSlider();
         }
-        if (Vector3.Distance(CurrentFloor.transform.position, this.transform.position) >= floorOffset)
+        if (Mathf.Abs(CurrentFloor.transform.position.x - this.transform.position.x) >= floorWidth)
         {
             SpawnFloor();
         }
@@ -61,15 +59,19 @@ public class Spawner : MonoBehaviour
     private void SpawnSlider()
     {
         Slider slider = GetNextSlider();
-        CurrentSlider = Instantiate(slider.prefab, transform.position, Quaternion.identity);
-        sliderOffset = slider.Width;
+        if (CurrentSlider == null) 
+            CurrentSlider = Instantiate(slider.prefab, this.transform.position, Quaternion.identity);
+        else
+           CurrentSlider = Instantiate(slider.prefab, CurrentSlider.transform.position + offset, Quaternion.identity);
+        sliderWidth = slider.Width;
         CurrentSlider.AddComponent<Move>();
         CurrentSlider.transform.Rotate(0,90,0);
+        offset.x = sliderWidth;
     }
     private void SpawnFloor()
     {
         CurrentFloor = Instantiate(levelDesign.GetFloor(biomeIndex), transform.position, Quaternion.identity);
-        floorOffset = levelDesign.listOfBiomes[biomeIndex].FloorWidth;
+        floorWidth = levelDesign.listOfBiomes[biomeIndex].FloorWidth;
         CurrentFloor.AddComponent<Move>();
     }
     private void SpawnStart()
@@ -78,9 +80,10 @@ public class Spawner : MonoBehaviour
     }
     private IEnumerator GoToInitialPosition()
     {
+        yield return new WaitForSeconds(0.5f);
         while (this.transform.position.x < DesiredSpawnPosition.position.x)
         {
-            this.transform.position += Vector3.right*Time.deltaTime*20;
+            this.transform.position += Vector3.right*Time.deltaTime*30;
             yield return null;
         } 
         LevelMainBehavior.Instance.StartGame(true);

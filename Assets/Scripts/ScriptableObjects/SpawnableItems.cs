@@ -6,23 +6,23 @@ using UnityEngine;
 public class SpawnableItems : ScriptableObject
 {
     public List<ItemPool> Pool;
-    public GameObject GetRandomItem()
+    public ItemPool GetRandomItem()
     {
+        int random = UnityEngine.Random.Range(0, TotalChance());
+        int currentChance = 0;
         foreach (ItemPool item in Pool)
         {
-            if(UnityEngine.Random.Range(0, 101)<=item.ChanceToSpawn)
-            {
-                return item.Prefab;
-            }
+            currentChance += item.SpawnChance;
+            if (random < currentChance) return item;
         }
-        return Pool[0].Prefab;
+        return Pool[0];
     }
-    private double ChanceSum()
+    private int TotalChance()
     {
-        double sum = 0;
-        foreach (ItemPool item in Pool) 
+        int sum = 0;
+        foreach (ItemPool item in Pool)
         {
-            sum += item.ChanceToSpawn;
+            sum += item.SpawnChance;
         }
         return sum;
     }
@@ -31,5 +31,6 @@ public class SpawnableItems : ScriptableObject
 public class ItemPool
 {
     public GameObject Prefab;
-    public double ChanceToSpawn;
+    public int SpawnChance;
+
 }

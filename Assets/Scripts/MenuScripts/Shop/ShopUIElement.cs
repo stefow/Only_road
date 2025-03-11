@@ -1,14 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.Playables;
-using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class ShopUIElement : MonoBehaviour
 {

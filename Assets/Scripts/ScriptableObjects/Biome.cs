@@ -1,3 +1,5 @@
+// Ignore Spelling: Biome
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,8 +9,11 @@ using UnityEngine;
 public class Biome : ScriptableObject
 {
     public string Name;
-    public Material Skybox;
+    public Material SkyBox;
+    public GameData Destroyer;
     public GameObject Floor;
+    public Material FloorMaterial;
+    public Color FloorTargetColor;
     public float FloorWidth;
     public int Duration;
     public List<Slider> Sliders;
@@ -31,11 +36,34 @@ public class Biome : ScriptableObject
         }
         return sum;
     }
-    Biome(string biomeName, List<Slider> sliders, int duration)
+    public void RefreshColor()
+    {
+        Floor.GetComponent<Material>().color = FloorTargetColor;
+    }
+    public Biome(string biomeName, List<Slider> sliders, int duration)
     {
         Name = biomeName;
         this.Sliders = sliders;
         this.Duration = duration;
+    }
+    
+    public IEnumerator TransitionMaterial(float duration)
+    {
+        Color startColor = FloorMaterial.color;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            FloorMaterial.color = Color.Lerp(startColor, FloorTargetColor, elapsedTime / duration);
+            yield return null;
+        }
+
+        FloorMaterial.color = FloorTargetColor;
+    }
+    public IEnumerator ChangeSkyBox()
+    {
+        return null;
     }
 }
 [Serializable]

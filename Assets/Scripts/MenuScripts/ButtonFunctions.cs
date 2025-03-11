@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class ButtonFunctions : MonoBehaviour
 {
-    public Destroyer destroyer;
-
     public bool MusicEnabled;
     public bool SoundEnabled;
 
@@ -21,25 +19,15 @@ public class ButtonFunctions : MonoBehaviour
     public Button musicButton;
     public AudioSource musicSource;
     public List<AudioSource> soundSource;
+    public GameObject LoadingPanel;
     public void OpenScene(int index)
     {
+        LoadingPanel.SetActive(true);
         SceneManager.LoadScene(index);
     }
     public void ExitGame()
     {
         Application.Quit();
-    }
-    public void EnableObject(GameObject target)
-    {
-        target.SetActive(true);
-    }
-    public void DisableObject(GameObject target)
-    {
-        target.SetActive(false);
-    }
-    public void StopTime(bool Start)
-    {
-
     }
     public void MusicOptions()
     {

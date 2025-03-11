@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71a322d231725741bba8e0277d9c3c1, type: 3}
+  m_Name: Spawn Pool Lava
+  m_EditorClassIdentifier: 
+  Pool:
+  - Prefab: {fileID: 1035988605768582083, guid: b1b7f2c390a37014390a17e304f8a178,
+      type: 3}
+    SpawnChance: 60
+  - Prefab: {fileID: 1035988605768582083, guid: 9d15af01516b2614b8bbff44d67ad7ed,
+      type: 3}
+    SpawnChance: 40
