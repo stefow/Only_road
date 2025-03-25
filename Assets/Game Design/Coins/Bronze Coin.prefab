@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 1
+  CoinSound: {fileID: 8300000, guid: ae17fd276694d3847a8340e2a3025a3d, type: 3}
 --- !u!1001 &243702666500427844
 PrefabInstance:
   m_ObjectHideFlags: 0

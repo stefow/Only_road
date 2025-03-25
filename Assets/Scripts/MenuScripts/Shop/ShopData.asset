@@ -21,27 +21,6 @@ MonoBehaviour:
     description: 
     Prefab: {fileID: 5523302643697964598, guid: af68f3558c33965439a4b5ca31dd3c13,
       type: 3}
-  - name: Metal cart
-    id: C1
-    price: 150
-    image: {fileID: 21300000, guid: b159202b0d12c774b9f88b681c10de53, type: 3}
-    description: 
-    Prefab: {fileID: 5523302643697964598, guid: af68f3558c33965439a4b5ca31dd3c13,
-      type: 3}
-  - name: Snow Cart
-    id: C2
-    price: 200
-    image: {fileID: 0}
-    description: 
-    Prefab: {fileID: 5523302643697964598, guid: af68f3558c33965439a4b5ca31dd3c13,
-      type: 3}
-  - name: Bug Cart
-    id: C3
-    price: 250
-    image: {fileID: 0}
-    description: 
-    Prefab: {fileID: 5523302643697964598, guid: af68f3558c33965439a4b5ca31dd3c13,
-      type: 3}
   Animals:
   - name: Cat
     id: DefaultAnimal
@@ -53,7 +32,7 @@ MonoBehaviour:
     Type: 0
   - name: Fox
     id: A2
-    price: 200
+    price: 100
     image: {fileID: 21300000, guid: a8ec4a29a90d0904eaf04e2447b0e4ec, type: 3}
     description: 
     Prefab: {fileID: 4568539701704079719, guid: 0bcc0f4dcab762547b10303400157432,
@@ -61,7 +40,7 @@ MonoBehaviour:
     Type: 0
   - name: Pig
     id: A3
-    price: 222
+    price: 150
     image: {fileID: 21300000, guid: e62ec766cb88ad4438853dd588addd8f, type: 3}
     description: 
     Prefab: {fileID: 8757686003690317535, guid: 2911051921278494b87b71ca1e8a65b7,
@@ -74,12 +53,12 @@ MonoBehaviour:
     description: 
     Prefab: {fileID: 432994110573728089, guid: 16420976df7baf848892a50319d26c58, type: 3}
     Type: 0
-  - name: Panda
-    id: A5
-    price: 400
-    image: {fileID: 21300000, guid: eeeba8defc8cf1343811d792b9042c87, type: 3}
+  - name: Squirrel
+    id: A10
+    price: 300
+    image: {fileID: 21300000, guid: 14d88b5690ca8cf46905b5ea38245ca2, type: 3}
     description: 
-    Prefab: {fileID: 7601859490367235725, guid: 45d41ebdefbd5e44fa73e10f22793f04,
+    Prefab: {fileID: 3208349020483910481, guid: fae60137050a9b44390e591755d97b85,
       type: 3}
     Type: 0
   - name: Sparrow
@@ -98,28 +77,12 @@ MonoBehaviour:
     Prefab: {fileID: 7486919516240463662, guid: a63af76f7cf8be04598ac0e26266cbe0,
       type: 3}
     Type: 0
-  - name: Gecko
-    id: A8
+  - name: Chicken
+    id: A12
     price: 400
-    image: {fileID: 21300000, guid: 5814372ae5236ae4d88846fe7b7894aa, type: 3}
+    image: {fileID: 21300000, guid: c0e2bf488c659d6449aacdf30ed7a6cd, type: 3}
     description: 
-    Prefab: {fileID: 1283408635915462021, guid: 1df907b60da561548b3faa90c6b0e8e8,
-      type: 3}
-    Type: 0
-  - name: Dachshund
-    id: A9
-    price: 400
-    image: {fileID: 21300000, guid: 2f505f91d7b5c694f906401c519bbdeb, type: 3}
-    description: 
-    Prefab: {fileID: 6713117685936582857, guid: 0be02c72cf8d6864ebe7c3c86d36e6d6,
-      type: 3}
-    Type: 0
-  - name: Squirrel
-    id: A10
-    price: 400
-    image: {fileID: 21300000, guid: 14d88b5690ca8cf46905b5ea38245ca2, type: 3}
-    description: 
-    Prefab: {fileID: 3208349020483910481, guid: fae60137050a9b44390e591755d97b85,
+    Prefab: {fileID: 3582724160446607568, guid: 3a0d744fe3b5ab84491cefca3c3aebf7,
       type: 3}
     Type: 0
   - name: Sheep
@@ -129,17 +92,33 @@ MonoBehaviour:
     description: 
     Prefab: {fileID: 680093273777695568, guid: 26736b13f646e574cad5f67c408b3771, type: 3}
     Type: 0
-  - name: Chicken
-    id: A12
+  - name: Dachshund
+    id: A9
     price: 400
-    image: {fileID: 21300000, guid: c0e2bf488c659d6449aacdf30ed7a6cd, type: 3}
+    image: {fileID: 21300000, guid: 2f505f91d7b5c694f906401c519bbdeb, type: 3}
     description: 
-    Prefab: {fileID: 3582724160446607568, guid: 3a0d744fe3b5ab84491cefca3c3aebf7,
+    Prefab: {fileID: 6713117685936582857, guid: 0be02c72cf8d6864ebe7c3c86d36e6d6,
+      type: 3}
+    Type: 0
+  - name: Panda
+    id: A5
+    price: 500
+    image: {fileID: 21300000, guid: eeeba8defc8cf1343811d792b9042c87, type: 3}
+    description: 
+    Prefab: {fileID: 7601859490367235725, guid: 45d41ebdefbd5e44fa73e10f22793f04,
+      type: 3}
+    Type: 0
+  - name: Gecko
+    id: A8
+    price: 800
+    image: {fileID: 21300000, guid: 5814372ae5236ae4d88846fe7b7894aa, type: 3}
+    description: 
+    Prefab: {fileID: 1283408635915462021, guid: 1df907b60da561548b3faa90c6b0e8e8,
       type: 3}
     Type: 0
   - name: Eagle
     id: A13
-    price: 400
+    price: 1000
     image: {fileID: 21300000, guid: 91cab2991f8b4b84ca554afd4f40fc3b, type: 3}
     description: 
     Prefab: {fileID: 4596316659257175309, guid: 956264c8986dbe64285c2b6f7ca03565,
