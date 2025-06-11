@@ -11,9 +11,8 @@
 ## Links
 Google Play: https://play.google.com/store/apps/details?id=com.AgelessGameStudio.OnlyRoad
 
-This project is shared for educational and testing purposes only.
-
 ## License & Usage
+This project is shared for educational and testing purposes only.
 You are free to:
 - Run the game locally
 - Use it as a reference for your own learning
